@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>员工股权激励全案：融资、上市前、上市后</title>
+<style>
+:root{--ink:#1c1c28;--ink2:#4a4a62;--ink3:#7c7c94;--line:#e2e2ea;--bg:#fafaf7;
+      --card:#ffffff;--accent:#2f5d9e;--accent2:#e9f2fb;--warn:#b45327;--warnbg:#fdf1e7;
+      --ok:#2d6a4f;--okbg:#e8f3ee;--bad:#a4262c;--badbg:#fbeaea;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font-family:'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif;
+     font-size:15px;line-height:1.75;}
+header{position:sticky;top:0;z-index:20;background:rgba(250,250,247,.96);
+       border-bottom:1px solid var(--line);padding:12px 28px;
+       display:flex;align-items:center;gap:16px;backdrop-filter:blur(8px);}
+header h1{font-size:17px;margin:0;font-weight:700;}
+header .sub{font-size:12px;color:var(--ink3);}
+header .sp{flex:1;}
+header button{border:1px solid var(--line);background:var(--card);color:var(--ink2);
+       padding:6px 14px;border-radius:4px;cursor:pointer;font-size:13px;}
+header button:hover{border-color:var(--accent);color:var(--accent);}
+.wrap{display:grid;grid-template-columns:260px 1fr;gap:32px;
+      max-width:1480px;margin:0 auto;padding:24px 28px 80px;}
+nav{position:sticky;top:76px;align-self:start;font-size:13px;
+    max-height:calc(100vh - 100px);overflow:auto;}
+nav .t{font-size:11px;letter-spacing:.12em;color:var(--ink3);
+       text-transform:uppercase;margin-bottom:8px;}
+nav a{display:block;color:var(--ink2);text-decoration:none;
+      padding:3px 0 3px 10px;border-left:2px solid transparent;}
+nav a:hover{color:var(--accent);border-left-color:var(--accent);}
+main{min-width:0;}
+h2{font-size:21px;margin:38px 0 14px;padding-bottom:8px;
+   border-bottom:2px solid var(--ink);letter-spacing:.01em;scroll-margin-top:76px;}
+h3{font-size:16px;margin:26px 0 10px;color:var(--accent);}
+h4{font-size:14px;margin:18px 0 8px;color:var(--ink2);}
+p{margin:10px 0;}
+blockquote{margin:16px 0;padding:10px 16px;background:var(--accent2);
+           border-left:3px solid var(--accent);color:var(--ink2);font-size:14px;}
+blockquote p{margin:4px 0;}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;
+      background:var(--card);}
+th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;
+      vertical-align:top;}
+th{background:#f2f2ee;font-weight:700;border-bottom:2px solid var(--ink);}
+tr:hover td{background:#fbfbf8;}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+code{background:#f1f1f5;padding:1px 5px;border-radius:3px;
+     font-family:'Consolas',monospace;font-size:12.5px;}
+pre{background:#1c1c28;color:#e8e8f0;padding:16px 18px;border-radius:6px;
+    overflow-x:auto;line-height:1.55;}
+pre code{background:none;color:inherit;padding:0;font-size:12.5px;}
+ul,ol{margin:10px 0;padding-left:24px;}
+li{margin:4px 0;}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0;}
+.keyh3{background:var(--warnbg);border-left:5px solid var(--warn);border-radius:4px;
+       padding:9px 14px;margin:30px 0 12px;color:#8a3d1c;font-size:16px;}
+.keyh3::before{content:"重点";display:inline-block;background:var(--warn);color:#fff;
+       font-size:11px;line-height:1.6;padding:0 7px;border-radius:3px;
+       margin-right:9px;vertical-align:2px;letter-spacing:.05em;}
+.callout{background:var(--warnbg);border:1px solid #e8c9b0;border-left:5px solid var(--warn);
+       border-radius:4px;padding:4px 16px 8px;margin:14px 0;}
+.callout table{background:transparent;}
+.callout th{background:#f6e2d2;}
+.callout p{margin:8px 0;}
+.callout-bad{background:var(--badbg);border:1px solid #e5b9bb;border-left:5px solid var(--bad);
+       border-radius:4px;padding:4px 16px 8px;margin:14px 0;}
+.callout-bad table{background:transparent;}
+.callout-bad th{background:#f5d9da;}
+.callout-bad p{margin:8px 0;}
+.callout-ok{background:var(--okbg);border:1px solid #bcd9c9;border-left:5px solid var(--ok);
+       border-radius:4px;padding:4px 16px 8px;margin:14px 0;}
+.callout-ok table{background:transparent;}
+.callout-ok th{background:#d6e9df;}
+.tag{display:inline-block;font-size:11px;line-height:1.6;padding:0 6px;border-radius:3px;
+     margin-right:5px;vertical-align:1px;color:#fff;}
+.tag-red{background:var(--bad);}.tag-amber{background:var(--warn);}.tag-green{background:var(--ok);}
+.figure{margin:16px 0;padding:14px 18px;background:#1c1c28;color:#e8e8f0;
+        border-radius:6px;font-family:'Consolas',monospace;font-size:13px;line-height:1.8;}
+.figure b{color:#ffd27f;}
+@media(max-width:900px){.wrap{grid-template-columns:1fr;}nav{display:none;}}
+@media print{
+  header,nav{display:none;}
+  .wrap{display:block;max-width:none;padding:0;}
+  body{font-size:11pt;background:#fff;}
+  h2{break-after:avoid;}
+  table{break-inside:avoid;font-size:9.5pt;}
+  pre,.figure{background:#f4f4f4;color:#111;border:1px solid #ddd;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>员工股权激励全案</h1>
+  <span class="sub">融资稀释 → 上市前激励 → 挂牌后持续激励 · 财务经理视角 · 2026-11</span>
+  <span class="sp"></span>
+  <button onclick="window.print()">打印 / 存为 PDF</button>
+</header>
+<div class="wrap">
+      <nav>
+    <div class="t">目录</div>
+    <a href="#怎么用这份方案">怎么用这份方案</a>
+    <div class="t" style="margin-top:16px">第一部分 · 融资</div>
+    <a href="#1-1">1.1 一条融资主线</a>
+    <a href="#1-2">1.2 每轮谈什么</a>
+    <a href="#1-3">1.3 股权结构怎么变</a>
+    <a href="#1-4">1.4 控制权</a>
+    <a href="#1-5">1.5 融资条款五条</a>
+    <a href="#1-6">1.6 激励池怎么处理</a>
+    <div class="t" style="margin-top:16px">第二部分 · IPO 前激励</div>
+    <a href="#2-1">2.1 先算账</a>
+    <a href="#2-2">2.2 板块门槛</a>
+    <a href="#2-3">2.3 总量与个量</a>
+    <a href="#2-4">2.4 工具选择</a>
+    <a href="#2-5">2.5 定价与公允价值</a>
+    <a href="#2-6">2.6 授予、成熟与退出</a>
+    <a href="#2-7">2.7 会计处理</a>
+    <a href="#2-8">2.8 税务</a>
+    <a href="#2-9">2.9 出资来源</a>
+    <a href="#2-10">2.10 申报前清理</a>
+    <a href="#2-11">2.11 时间表</a>
+    <a href="#2-12">2.12 动作清单</a>
+    <div class="t" style="margin-top:16px">第三部分 · 上市之后</div>
+    <a href="#3-1">3.1 性质变了</a>
+    <a href="#3-2">3.2 工具只剩三种</a>
+    <a href="#3-3">3.3 五个法定指标</a>
+    <a href="#3-4">3.4 成熟期法定节奏</a>
+    <a href="#3-5">3.5 谁能参加</a>
+    <a href="#3-6">3.6 窗口期</a>
+    <a href="#3-7">3.7 税</a>
+    <a href="#3-8">3.8 会计</a>
+    <a href="#3-9">3.9 上市前后对比</a>
+    <a href="#3-10">3.10 四个动作</a>
+    <div class="t" style="margin-top:16px">附录</div>
+    <a href="#附一-测算表">附一 测算表使用说明</a>
+    <a href="#附二-规则依据">附二 规则依据</a>
+  </nav>
+  <main>
+<h2>从成立到上市之后，三个阶段一套方案</h2>
+<blockquote>
+<p>适用范围：拟在 A 股主板、创业板、科创板、北交所申报的有限责任公司或股份有限公司。</p>
+<p>本方案按公司发展的三个阶段组织：<strong>融资怎么稀释股权、上市前怎么给员工股份、挂牌之后规则怎么变。</strong></p>
+</blockquote>
+
+<h2 id="怎么用这份方案">怎么用这份方案</h2>
+<p>这份文档按时间线分三部分，对应一家公司从成立到上市后的三个阶段。</p>
+
+<h3>三个部分</h3>
+<table>
+<thead><tr><th>部分</th><th>章节</th><th>回答什么问题</th></tr></thead>
+<tbody>
+<tr><td><strong>第一部分</strong><br>融资</td><td>1.1–1.6</td><td>公司一路融资下来，股权被稀释成什么样，激励池还剩多少</td></tr>
+<tr><td><strong>第二部分</strong><br>IPO 前激励</td><td>2.1–2.12</td><td>上市前怎么给：给多少、什么价、什么时候到手、账和税怎么处理</td></tr>
+<tr><td><strong>第三部分</strong><br>上市之后</td><td>3.1–3.10</td><td>挂牌之后，同一件事的规则换成什么样</td></tr>
+</tbody>
+</table>
+
+<p><strong>三部分是递进的，不是并列的。</strong>不先算清楚融资稀释了多少，第二部分的总量就是拍脑袋；不先做对第二部分，第三部分就无处落地。</p>
+
+<p>配套三张测算表：<code>01 融资稀释测算表.xlsx</code>、<code>02 ipo前股权激励测算表.xlsx</code>、<code>03 上市后股权激励测算表.xlsx</code>，改参数自动出结果。</p>
+
+<hr/>
+
+<h2 id="part1">第一部分　融资：从成立到 IPO 前</h2>
+
+<p>这一部分讲的是饼怎么来的。员工的股份从这块饼上切下来，饼被几轮融资稀释过，切的时候还剩多少——三件事是连着的。不先把股权结构的来路算清楚，后面的激励方案就是凭空设计。</p>
+<p>看清楚一点：<strong>融资稀释的是所有人，包括激励池。</strong>你的池子设得再大，每一轮融资都按同一个比例缩水。</p>
+
+<h2 id="1-1">1.1 一条融资主线：分五段证明自己</h2>
+
+<p>融资不是一次要钱的动作，是分五段向市场证明自己。每一段证明的东西不同，能拿到的估值不同，让出去的股比也不同。</p>
+
+<table>
+<thead><tr><th>阶段</th><th>要证明什么</th><th class="num">融资额</th><th class="num">出让比例</th><th class="num">投后估值</th><th>典型投资人</th></tr></thead>
+<tbody>
+<tr><td>种子 / 天使</td><td>团队和方向</td><td class="num">300 万–1 亿</td><td class="num">10%–15%</td><td class="num">3,000 万–1 亿</td><td>天使、个人、产业方</td></tr>
+<tr><td>A 轮</td><td>产品跑通，有付费客户</td><td class="num">2,000 万–1 亿</td><td class="num">15%–25%</td><td class="num">1 亿–4 亿</td><td>早期 VC</td></tr>
+<tr><td>B 轮</td><td>收入上规模，模式可复制</td><td class="num">1 亿–5 亿</td><td class="num">10%–20%</td><td class="num">5 亿–20 亿</td><td>VC、成长期基金</td></tr>
+<tr><td>C 轮</td><td>盈利模型成立，行业地位</td><td class="num">3 亿–10 亿</td><td class="num">8%–15%</td><td class="num">20 亿–80 亿</td><td>PE、战略投资</td></tr>
+<tr><td>Pre-IPO</td><td>上市条件基本满足</td><td class="num">1 亿–5 亿</td><td class="num">5%–10%</td><td class="num">50 亿以上</td><td>战略投资、产业资本</td></tr>
+</tbody>
+</table>
+<p>上表是制造业的一般区间，行业差异极大：半导体、生物医药的早期估值可能是制造业的三到五倍，传统制造可能连一半都不到。用它判断「我这一轮谈得贵不贵」，不要当标准答案。</p>
+
+<div class="callout">
+<p><strong>为什么分段融，不一次融够</strong></p>
+<p>如果公司三年后值 10 亿，现在按 1 亿的估值融够三年用的钱，等于用一成股权换十倍空间。每一轮估值上涨，都是用更少的股份换同样多的钱。</p>
+<p>代价是：每融一轮都要谈一次，每次谈判都是一轮新的稀释和新的条款。</p>
+</div>
+
+<h3>轮次之间的节奏</h3>
+<p>通常间隔 <strong>12 到 24 个月</strong>。间隔太短，业绩没变化，估值涨不动；太长，钱快烧完才去融，议价权完全在对方手里。</p>
+<p>判断该不该启动下一轮，看一个数：<strong>账上现金还能撑几个月</strong>。低于 12 个月就该启动，低于 6 个月就是被动融资，估值和条款都会吃亏。</p>
+
+<h2 id="1-2">1.2 每轮谈什么：三个数定两个</h2>
+
+<div class="figure">
+融资额 = 投后估值 × 出让比例<br>
+三个数<strong>定两个</strong>，第三个自动成立
+</div>
+
+<p>谈判桌上争的表面是估值，实际是这三个数的组合。融资额是需求（要多少钱），出让比例是代价（让多少股），估值是结果。</p>
+<p>先想清楚「这轮需要多少钱、能撑多久」，再谈估值——顺序反了，就容易为了一个漂亮的估值数字，多让出好几个点。</p>
+
+<h3>估值怎么定：三种方法</h3>
+<table>
+<thead><tr><th>方法</th><th>怎么算</th><th>适合</th><th>风险</th></tr></thead>
+<tbody>
+<tr><td>市盈率法</td><td>净利润 × 倍数（8–30 倍）</td><td>已稳定盈利</td><td>倍数主观，是谈判焦点</td></tr>
+<tr><td>市销率法</td><td>营业收入 × 倍数（1–10 倍）</td><td>未盈利、高增长</td><td>收入质量要经得起尽职调查</td></tr>
+<tr><td>可比交易法</td><td>同类公司最近一轮的估值</td><td>有明确对标</td><td>对标公司难找，容易被质疑</td></tr>
+</tbody>
+</table>
+<p>实际谈判里，投资人用的往往是三种方法的交叉验证，最后落在一个区间。你能做的是：<strong>先自己算一遍三种方法的结果</strong>，知道区间在哪，谈判时心里有底。</p>
+
+<h3>估值不是越高越好</h3>
+<p>这是创始人最容易犯的错，也是财务经理最该提醒的一条。</p>
+<table>
+<thead><tr><th>反噬</th><th>机制</th></tr></thead>
+<tbody>
+<tr><td><strong>下一轮涨不动</strong></td><td>叫「down round」，触发上一轮的反稀释条款，老投资人会自动获得补偿股份，创始人被额外稀释</td></tr>
+<tr><td><strong>员工行权价被推高</strong></td><td>公允价高，同样股数的股份支付费用高，直接压报告期利润——这就是第二部分那条算术的起点</td></tr>
+<tr><td><strong>退出难</strong></td><td>估值透支了未来几年的成长，上市定价低于最后一轮，就是破发</td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>三条经验红线</strong></p>
+<p>单轮出让不超过 <strong>25%</strong>；前几轮累计不超过 <strong>40%</strong>；创始人到 IPO 前持股不低于 <strong>30%</strong>。</p>
+<p>超过第一条，说明这一轮要的钱太多或估值太低；超过第二条，创始团队在董事会里的话语权已经很弱；跌破第三条，控制权要靠协议来维持，不再是靠股份。</p>
+</div>
+
+<h2 id="1-3">1.3 股权结构怎么变：一张表走完全程</h2>
+
+<p>连续稀释的算法只有一句：<strong>每一轮，老股东的持股比例乘以（1 − 出让比例）。</strong></p>
+<div class="figure">
+本轮后老股东持股 = 本轮前持股 × (1 − 出让比例)<br>
+新股东持股 = 出让比例
+</div>
+
+<p>用一组具体数字走一遍。假设成立时 100 股全在创始团队手里，A 轮前切出 15% 做激励池，之后走 A、B、C 三轮：</p>
+
+<table>
+<thead><tr><th>阶段</th><th class="num">总股本</th><th class="num">创始团队</th><th class="num">激励池</th><th class="num">A 轮</th><th class="num">B 轮</th><th class="num">C 轮</th></tr></thead>
+<tbody>
+<tr><td>成立</td><td class="num">100.0</td><td class="num">100.0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td>切池 15%</td><td class="num">100.0</td><td class="num">85.0%</td><td class="num">15.0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td>A 轮 20%</td><td class="num">125.0</td><td class="num">68.0%</td><td class="num">12.0%</td><td class="num">20.0%</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td>B 轮 15%</td><td class="num">147.1</td><td class="num">57.8%</td><td class="num">10.2%</td><td class="num">17.0%</td><td class="num">15.0%</td><td class="num">—</td></tr>
+<tr><td>C 轮 12%</td><td class="num">167.1</td><td class="num"><strong>50.9%</strong></td><td class="num"><strong>9.0%</strong></td><td class="num">15.0%</td><td class="num">13.2%</td><td class="num">12.0%</td></tr>
+</tbody>
+</table>
+
+<p>两条线同时下滑：创始团队从 100% 走到 50.9%，激励池从 15% 缩到 9.0%。<strong>这就是「饼」的真相——饼变大了，你那一块的占比变小了。</strong></p>
+
+<div class="callout">
+<p><strong>这张表回答员工最常问的一个问题</strong></p>
+<p>「公司估值涨了 20 倍，我的股份怎么没变多？」</p>
+<p>因为估值涨的是公司总价值，你手里的股比每一轮都在被稀释。股份的价值涨了，占比跌了——两个数不是一回事。</p>
+</div>
+
+<p>上表只算了 A、B、C 三轮。加上天使轮（15%）和 Pre-IPO 轮（10%），创始团队最终会掉到 40% 以下，池子剩 7% 左右。<strong>这就是为什么激励池要在 A 轮前一次切够，而不是每轮现切。</strong></p>
+
+<h2 id="1-4">1.4 控制权：稀释到哪一步要警惕</h2>
+
+<p>股份是钱，也是投票权。融资让出的是前者，但失控丢的是后者。四个门槛要记住：</p>
+
+<table>
+<thead><tr><th>创始团队持股</th><th>法定地位</th><th>应对</th></tr></thead>
+<tbody>
+<tr><td>&gt; 67%</td><td>特别决议也能单独通过</td><td>安全</td></tr>
+<tr><td>50%–67%</td><td>普通决议控制，特别决议要拉票</td><td>留意公司章程里的特别决议事项</td></tr>
+<tr><td>34%–50%</td><td>对特别决议有一票否决</td><td>相对安全，需盯住一致行动人</td></tr>
+<tr><td>30%–34%</td><td>只剩否决权，且已到临界</td><td>签一致行动人协议</td></tr>
+<tr><td>&lt; 30%</td><td>无否决权；再往下就接近失去控制权认定，被举牌时难以反制</td><td>董事会席位、平台 GP、章程条款</td></tr>
+</tbody>
+</table>
+
+<p>特别决议指的是修改章程、增减注册资本、合并分立解散、变更公司形式——这几件事上，34% 就是生死线。</p>
+
+<h3>不靠股份保住控制权的四种做法</h3>
+<table>
+<thead><tr><th>工具</th><th>怎么做</th><th>限制</th></tr></thead>
+<tbody>
+<tr><td>一致行动人协议</td><td>几个股东约定投票一致，表决权合并计算</td><td>协议有期限，人走要重签</td></tr>
+<tr><td>AB 股（表决权差异安排）</td><td>创始人每股多票</td><td>主板不允许；科创板、创业板可以，但要过市值门槛（预计市值 100 亿以上，或 50 亿且最近一年营收 5 亿以上），且只能在上市前设置</td></tr>
+<tr><td>董事会席位</td><td>章程约定创始人有权提名多数董事</td><td>投资人一定会争，是谈判焦点</td></tr>
+<tr><td>持股平台 GP</td><td>员工持股平台的表决权归 GP，员工不参与</td><td>只覆盖平台内的股份</td></tr>
+</tbody>
+</table>
+
+<div class="keyh3">激励池本身的表决权，别忽略</div>
+<p>未授予的份额没有归属，表决权是悬空的——这是个真实的治理漏洞，也是投资人会追问的点。</p>
+<p>标准做法：<strong>池子由创始人或其控股主体作为 GP 持有，未授予部分的表决权归 GP。</strong>这样池子再大，也不削弱控制权。</p>
+
+<h2 id="1-5">1.5 融资条款里与股权有关的五条</h2>
+
+<p>投资协议动辄几十页，但真正影响员工股份的只有五条。这五条不改，激励方案设计得再好也可能落不了地。</p>
+
+<table>
+<thead><tr><th>条款</th><th>是什么</th><th>对员工激励的影响</th></tr></thead>
+<tbody>
+<tr><td><strong>优先清算权</strong></td><td>公司被卖掉时，投资人先拿回本金或几倍</td><td>员工股份在清算顺序最后，估值不高时可能一分拿不到</td></tr>
+<tr><td><strong>反稀释</strong></td><td>下轮估值跌了，投资人自动获得补偿股份</td><td>跌的时候创始人稀释最惨，激励池也被摊薄</td></tr>
+<tr><td><strong>领售权</strong></td><td>多数投资人同意卖，可强制全体股东一起卖</td><td>员工不想卖也得卖，退出价格不受自己控制</td></tr>
+<tr><td><strong>回购权 / 对赌</strong></td><td>业绩不达标，公司或创始人须回购投资人股份</td><td>创始人可能被迫卖股还债，控制权流失</td></tr>
+<tr><td><strong>优先购买权、共同出售权</strong></td><td>有人卖股，投资人有权先买或跟着卖</td><td>员工离职转让份额可能被卡住</td></tr>
+</tbody>
+</table>
+
+<h3>逐条说清楚</h3>
+<p><strong>优先清算权。</strong>分两种：1x 不参与，投资人先拿回本金，剩下的按比例分；1x 参与，先拿回本金，再参与剩余分配——对创始团队和员工最不利。谈的时候争取「不参与」，或约定「参与上限」（比如 2x 封顶）。</p>
+<p><strong>反稀释。</strong>完全棘轮最狠：下轮价格多少，上轮投资人的价格直接调到多少。加权平均是行业惯例，按公式折中。有这条在，公司就不敢轻易做 down round——<strong>也意味着员工期权行权价不能随便往下调。</strong></p>
+<p><strong>领售权。</strong>通常约定「多数投资人同意 + 达到某个估值」才能触发。员工的份额一般也受约束，必须在激励协议里写清楚：什么价格以下员工可以不跟。</p>
+<p><strong>回购权 / 对赌。</strong>2023 年以后监管要求 IPO 申报前清理对赌，但回购义务常常转到创始人个人头上。<strong>创始人个人回购义务是最危险的一条</strong>——公司上不了市，创始人要自己掏钱买回投资人股份，很多人在这里丢掉控制权甚至破产。</p>
+<p><strong>优先购买权与共同出售权。</strong>员工离职转让份额，投资人可能主张优先购买。要在持股平台的合伙协议里事先约定：员工份额的转让不受投资人优先权限制，或已完成豁免。</p>
+
+<div class="callout">
+<p><strong>财务经理的动作</strong></p>
+<p>每轮融资签约前，把这五条逐条过一遍，问两个问题：这条会不会卡住员工退出？这条会不会让创始人个人承担义务？</p>
+<p>两个问题都是「会」，就要在签约前谈掉，不能留到申报前再补。</p>
+</div>
+<h2 id="1-6">1.6 每一轮融资，激励池怎么处理</h2>
+
+<p>前面五节讲的是融资本身。这一节回答一个具体问题：<strong>每轮融资的时候，激励池该怎么处理。</strong></p>
+<p>拟上市公司遇到的股权问题，多数是历史积累的，不是当期设计出来的。</p>
+<p>这条路上有一个贯穿始终的约束：<strong>估值每涨一轮，同样的股数，费用就贵一截。</strong></p>
+
+<h3>全景：每轮该做什么</h3>
+<table>
+<thead><tr><th>阶段</th><th>池子动作</th><th>工具</th><th>授予规模</th><th>关键约束</th></tr></thead>
+<tbody>
+<tr><td>种子 / 天使</td><td>预留 10%–15%</td><td>代持或平台</td><td>核心 3–5 人</td><td>代持必须限期解除</td></tr>
+<tr><td>A 轮</td><td><strong>交割前必须设好</strong></td><td>有限合伙</td><td>3%–4%</td><td>投资人写进交割先决条件</td></tr>
+<tr><td>B 轮</td><td>按需刷新</td><td>有限合伙</td><td>4%–5%</td><td>第一次大规模授予</td></tr>
+<tr><td>C 轮</td><td>按需刷新</td><td>有限合伙</td><td>4%–5%</td><td>锁核心，控费用</td></tr>
+<tr><td>IPO 前</td><td>剩余额度清空</td><td>转实股</td><td>2%–3%</td><td>清理、加速、穿透核查</td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>A 轮是分水岭。</strong></p>
+<p>投资人几乎都会要求「交割前已设立员工期权池」——这不是建议，是 Term Sheet 里的交割先决条件。没设，交割可以卡住。</p>
+</div>
+
+<h3>稀释的数学：15% 的池子到 IPO 只剩 9%</h3>
+<p>这是最容易被忽略、也最容易算错的地方。池子不是静态的，它跟着每一轮融资一起被稀释。</p>
+<table>
+<thead><tr><th>轮次</th><th class="num">出让比例</th><th class="num">投后估值</th><th class="num">池子剩余</th></tr></thead>
+<tbody>
+<tr><td>A 轮前预留</td><td class="num">—</td><td class="num">1.5 亿</td><td class="num">15.0%</td></tr>
+<tr><td>A 轮后</td><td class="num">20%</td><td class="num">1.5 亿</td><td class="num">12.0%</td></tr>
+<tr><td>B 轮后</td><td class="num">15%</td><td class="num">6 亿</td><td class="num">10.2%</td></tr>
+<tr><td>C 轮后</td><td class="num">12%</td><td class="num">20 亿</td><td class="num"><strong>8.98%</strong></td></tr>
+</tbody>
+</table>
+
+<div class="figure">
+15% × (1 − 20%) × (1 − 15%) × (1 − 12%) = <b>8.98%</b><br>
+A 股上市时留存的期权池通常在 8% 左右 — <b>15% 刚好够用</b>
+</div>
+
+<p>如果希望 IPO 前还剩 12%，要倒推：</p>
+<div class="figure">
+12% ÷ (0.80 × 0.85 × 0.88) = <b>20%</b><br>
+A 轮前必须预留 20%，少一个点，到最后差 0.6 个点
+</div>
+
+<div class="callout">
+<p><strong>财务经理的动作：每轮 Term Sheet 到手，先算池子剩多少，再决定这轮能授予多少。</strong></p>
+<p>每轮的出让比例都在谈，池子的最终存量取决于谈判结果，所以这张表要每轮重算一次。</p>
+<p>配套的 <code>01 融资稀释测算表.xlsx</code> 已经把这段演算做成了公式：填各轮出让比例，直接给出 IPO 前的池子余额、缺口和反推的预留量。</p>
+</div>
+
+<h3>费用：同一个员工，早授予和晚授予差 34 倍</h3>
+<p>这是第二个反直觉的地方。同样的股数，放在不同轮次授予，股份支付费用差一个数量级。</p>
+<p>假设授予 300 万股（占 IPO 前总股本 3%）：</p>
+<table>
+<thead><tr><th>授予时点</th><th class="num">每股公允价</th><th class="num">授予价</th><th class="num">股份支付费用</th></tr></thead>
+<tbody>
+<tr><td>A 轮时</td><td class="num">1.5 元</td><td class="num">1 元</td><td class="num"><strong>150 万</strong></td></tr>
+<tr><td>B 轮时</td><td class="num">6 元</td><td class="num">1.5 元</td><td class="num">1,350 万</td></tr>
+<tr><td>C 轮时</td><td class="num">20 元</td><td class="num">3 元</td><td class="num"><span class="tag tag-red">5,100 万</span></td></tr>
+</tbody>
+</table>
+
+<div class="callout-ok">
+<p><strong>解法：池子早预留，授予分批发。</strong></p>
+<p>池子的「预留」不产生任何费用——只有「授予」到具体人，才按授予日的公允价计量。</p>
+<p>所以锁定额度要早（零成本），发给具体人要分批（每批费用随估值上涨，但每批金额可控）。</p>
+</div>
+
+<p>分批的参考节奏：</p>
+<table>
+<thead><tr><th>动作</th><th>时点</th><th>效果</th></tr></thead>
+<tbody>
+<tr><td>预留 15% 池子</td><td>A 轮前</td><td>锁定额度，<strong>零费用</strong></td></tr>
+<tr><td>授予第一批 3%</td><td>A 轮后</td><td>费用低，锁定核心 3–5 人</td></tr>
+<tr><td>授予第二批 4%</td><td>B 轮后</td><td>费用中，覆盖中层</td></tr>
+<tr><td>授予第三批 5%</td><td>C 轮后</td><td>费用高，但此时公司有能力承担</td></tr>
+<tr><td>授予第四批 3%</td><td>IPO 前</td><td>费用最高，只给关键人才</td></tr>
+</tbody>
+</table>
+
+<p>一次性在 C 轮后发完，费用会集中在一两年内，直接打穿利润——这正是 2.1 节那条算术在融资路径上的表现。</p>
+
+<h3>投前还是投后：一个词差 360 万</h3>
+<p>这是融资谈判里最值钱的一条，比池子比例本身更重要。要区分两件事：<strong>池子多大</strong>，和<strong>这池子由谁出</strong>。</p>
+<p>假设 A 轮投前估值 1.2 亿、融资 3,000 万、投后 1.5 亿，池子占投后总股本 12%（即 15 股，投资人 25 股，合 125 股）：</p>
+<table>
+<thead><tr><th>口径</th><th class="num">创始人承担</th><th class="num">投资人承担</th><th class="num">投后创始人持股</th><th class="num">投后投资人持股</th></tr></thead>
+<tbody>
+<tr><td><strong>投前</strong></td><td class="num">15 股</td><td class="num">0</td><td class="num"><strong>68.0%</strong></td><td class="num">20.0%</td></tr>
+<tr><td><strong>投后</strong></td><td class="num">12 股</td><td class="num">3 股</td><td class="num"><strong>70.4%</strong></td><td class="num">17.6%</td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>同样是 12% 的池子，写投前，创始人独自承担全部摊薄；写投后，新老股东按比例共担。</strong></p>
+<p>差额 3 股，按投前每股 120 元折算 = <strong>360 万</strong>；对应持股差 2.4 个百分点。</p>
+<p>条款没写清楚的，实践中通常按投前处理——也就是默认由创始团队承担。</p>
+</div>
+
+<p>动作：Term Sheet 阶段就要把这四个字写进条款——期权池按「投后」口径计算。</p>
+
+<h3>协议里必须谈的四件事</h3>
+<table>
+<thead><tr><th class="num">#</th><th>条款</th><th>要点</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>投前还是投后</strong></td><td>争取投后，写进 Term Sheet</td></tr>
+<tr><td class="num">2</td><td><strong>池子能否随轮次刷新、由谁承担</strong></td><td>补齐会稀释，写清按哪个估值口径</td></tr>
+<tr><td class="num">3</td><td><strong>未用完的池子怎么处理</strong></td><td>返还全体股东（对创始人有利）还是默认保留</td></tr>
+<tr><td class="num">4</td><td><strong>未经同意不得扩大池子</strong></td><td>投资人常要求，<strong>争取留出刷新例外</strong></td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>第 4 条最容易踩坑。</strong></p>
+<p>投资人写了「未经其同意不得扩大员工期权池」，等 B 轮想补 5% 给新招的高管，就要重新谈一轮。</p>
+<p>签字前确认这一条有没有留「按融资轮次等比例刷新」的例外。</p>
+</div>
+
+<h3>融资条款留下的三个尾巴</h3>
+<table>
+<thead><tr><th class="num">#</th><th>尾巴</th><th>处理</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>代持</strong></td><td>早期池子由创始人代持，申报前必须解除、还原真实权属</td></tr>
+<tr><td class="num">2</td><td><strong>投资人优先权</strong></td><td>优先购买权、共同出售权会影响员工退出，员工份额要事先约定不受限制</td></tr>
+<tr><td class="num">3</td><td><strong>未行权期权的加速</strong></td><td>申报前加速行权 = 一次性确认剩余费用，这笔钱要提前算进报告期利润</td></tr>
+</tbody>
+</table>
+
+<h3>三个最容易犯的错</h3>
+<table>
+<thead><tr><th>错法</th><th>后果</th></tr></thead>
+<tbody>
+<tr><td>IPO 前才设池子</td><td>费用最高、突击入股问询、还要重新稀释全体股东</td></tr>
+<tr><td>池子写投前</td><td>创始人独自多承担 2.4 个百分点</td></tr>
+<tr><td>一次性发完</td><td>费用集中在一两年，打穿利润指标</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h2 id="part2">第二部分　IPO 前的员工股权激励</h2>
+
+<p>这一部分是方案的主体。前面算清楚了饼有多大、还剩多少，这里解决怎么切。</p>
+<p>顺序不能反过来：<strong>先算能承担多少费用，再定给多少股。</strong>拟上市阶段，给的每一股都要以费用形式冲减报告期利润，而上市标准卡的正是这个利润。</p>
+<h2 id="2-1">2.1 先算账：费用与利润的冲突</h2>
+
+<h3>一个具体测算</h3>
+<table>
+<thead><tr><th>项目</th><th class="num">数值</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股本</td><td class="num">6,000 万股</td><td>—</td></tr>
+<tr><td>报告期净利润</td><td class="num">4,500 / 5,200 / 6,000 万</td><td>三年，对应 2024–2026</td></tr>
+<tr><td>拟申报板块</td><td class="num">创业板</td><td>最近一年 ≥ 6,000 万，两年累计 ≥ 1 亿</td></tr>
+<tr><td>每股公允价</td><td class="num">10 元</td><td>—</td></tr>
+<tr><td>授予价</td><td class="num">3 元</td><td>公允价三折</td></tr>
+<tr><td>激励总量</td><td class="num">10%，600 万股</td><td>—</td></tr>
+<tr><td><strong>股份支付总额</strong></td><td class="num"><strong>4,200 万</strong></td><td>(10 − 3) × 600 万</td></tr>
+</tbody>
+</table>
+
+<h3>摊销时点决定报告期承担多少</h3>
+<p>按 4 年成熟期分摊：</p>
+<table>
+<thead><tr><th>授予时点</th><th>摊销年度</th><th>报告期承担年度</th><th class="num">报告期费用</th><th class="num">占比</th></tr></thead>
+<tbody>
+<tr><td>2023 年末（报告期前）</td><td>2024–2027</td><td>2024、2025、2026</td><td class="num">3,150 万</td><td class="num">75%</td></tr>
+<tr><td>2024 年末</td><td>2025–2028</td><td>2025、2026</td><td class="num">2,100 万</td><td class="num">50%</td></tr>
+<tr><td>2025 年末</td><td>2026–2029</td><td>2026</td><td class="num">1,050 万</td><td class="num">25%</td></tr>
+<tr><td>2026 年末</td><td>2027–2030</td><td>无</td><td class="num">0</td><td class="num">0%</td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>这里有个反直觉的结论：越早授予，报告期承担得越多。</strong></p>
+<p>因为摊销期一旦开始，覆盖报告期的年份就越多。2023 年授予、摊到 2027 年，报告期三年全在摊销期内。</p>
+<p>而 2026 年末授予、摊销从 2027 年开始，报告期费用为零。</p>
+</div>
+
+<h3>那为什么不都等到最后？</h3>
+<p>因为晚授予的估值更高。同样 600 万股，如果 2026 年公允价涨到 15 元：</p>
+<table>
+<thead><tr><th>授予时点</th><th class="num">公允价</th><th class="num">授予价</th><th class="num">股份支付总额</th><th>落在哪</th></tr></thead>
+<tbody>
+<tr><td>2023 年末</td><td class="num">10 元</td><td class="num">3 元</td><td class="num">4,200 万</td><td>报告期承担 75%</td></tr>
+<tr><td>2026 年末</td><td class="num">15 元</td><td class="num">4.5 元</td><td class="num">6,300 万</td><td>全在上市后</td></tr>
+</tbody>
+</table>
+<p>总额多了 2,100 万，但报告期一分不承担。<strong>对上市指标来说，这个交换是划算的；对公司真实利润来说，不划算。</strong></p>
+
+<h3>还有一种风险：突击入股</h3>
+<div class="callout-bad">
+<p><strong>申报前 12 个月内新增的股东，自取得之日起 36 个月内不得转让。</strong></p>
+<p>监管还会追问：入股背景、定价依据、资金来源、是否代持、有无利益输送。</p>
+<p>所以「等到最后一刻再做」不是免费的最优解，它换来了另一项成本：问询与锁定期。</p>
+</div>
+
+<h3>三种策略的选择</h3>
+<table>
+<thead><tr><th>策略</th><th class="num">报告期费用</th><th class="num">总费用</th><th>主要风险</th><th>适用</th></tr></thead>
+<tbody>
+<tr><td>报告期前做完</td><td class="num">高</td><td class="num">低</td><td>无</td><td>报告期尚未开始的</td></tr>
+<tr><td>报告期第 1–2 年</td><td class="num">中</td><td class="num">中</td><td>正常承受</td><td>多数企业</td></tr>
+<tr><td>报告期末 / 申报前</td><td class="num">0</td><td class="num">高</td><td>突击入股问询、36 个月锁定</td><td>估值低的</td></tr>
+</tbody>
+</table>
+
+<p><strong>市场主流做法</strong>：报告期第 1 年末授予 70%、第 2 年末 20%、第 3 年末 10%。</p>
+<p>这不是最优解，是费用、估值、问询风险三者的平衡点。</p>
+
+<h3>一条实操红线（但只是初筛）</h3>
+<div class="callout">
+<p><strong>每年摊销费用 ÷ 最近一年净利润：</strong></p>
+<table>
+<thead><tr><th>比例</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>≤ 10%</td><td>安全，指标基本不受影响</td></tr>
+<tr><td>10%–20%</td><td>可接受，但要精算</td></tr>
+<tr><td>20%–30%</td><td>危险，需重新设计方案</td></tr>
+<tr><td>&gt; 30%</td><td><span class="tag tag-red">红线</span>大概率打穿上市指标</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>算到底：上面的例子其实打穿了</h3>
+<p>用 2.1 节的参数继续算（净利润 4,500 / 5,200 / 6,000 万，10% 激励，2024 年末授予）：</p>
+<table>
+<thead><tr><th>检查项</th><th class="num">扣激励后</th><th class="num">创业板要求</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>最近一年净利润</td><td class="num">6,000 − 1,050 = 4,950</td><td class="num">≥ 6,000</td><td><span class="tag tag-red">不满足</span></td></tr>
+<tr><td>最近两年累计</td><td class="num">4,150 + 4,950 = 9,100</td><td class="num">≥ 10,000</td><td><span class="tag tag-red">不满足</span></td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>占净利 17.5%，落在「可接受」那一档，实际已经打穿。</strong></p>
+<p>所以那张比例表只是第一道筛子。<strong>真正的裁决是板块门槛</strong>——必须把扣完费用的净利润带回上市标准去对。</p>
+</div>
+
+<h3>三条补救路，和它们各自的代价</h3>
+<table>
+<thead><tr><th>调整方向</th><th>效果</th><th>代价</th></tr></thead>
+<tbody>
+<tr><td>激励比例 10% → 6%</td><td>年摊销 1,050 → 630 万</td><td>激励力度下降，核心人员可能不买账</td></tr>
+<tr><td>授予价 3 → 5 元</td><td>每股差额 7 → 5 元，总额 4,200 → 3,000 万</td><td>员工出资压力上升，5 元/股要真金白银</td></tr>
+<tr><td>时点推到报告期第 3 年末</td><td>报告期承担 1,050 → 0</td><td>突击入股问询 + 36 个月锁定</td></tr>
+</tbody>
+</table>
+
+<h3>换一组利润：同一套激励就成立了</h3>
+<table>
+<thead><tr><th>项目</th><th class="num">参数组 A</th><th class="num">参数组 B</th></tr></thead>
+<tbody>
+<tr><td>报告期净利润</td><td class="num">4,500 / 5,200 / 6,000</td><td class="num">6,000 / 7,500 / 9,000</td></tr>
+<tr><td>第 2 年扣激励后</td><td class="num">4,150</td><td class="num">6,450</td></tr>
+<tr><td>第 3 年扣激励后</td><td class="num">4,950</td><td class="num">7,950</td></tr>
+<tr><td>两年累计</td><td class="num">9,100</td><td class="num">14,400</td></tr>
+<tr><td>创业板判断</td><td><span class="tag tag-red">不满足</span></td><td><span class="tag tag-green">满足</span></td></tr>
+</tbody>
+</table>
+
+<div class="callout-ok">
+<p><strong>激励方案能不能成立，取决于公司自己的利润曲线，不取决于行业惯例。</strong></p>
+<p>同样 10% 的激励，在净利润 6,000 万的公司是打穿，在 9,000 万的公司是正常。所以第一步永远是算自己的账。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-2">2.2 板块门槛决定承受力</h2>
+<p>2024 年 4 月新「国九条」配套规则后的标准：</p>
+<table>
+<thead><tr><th>板块</th><th>主要财务门槛</th><th>费用容忍度</th></tr></thead>
+<tbody>
+<tr><td><strong>主板</strong></td><td>三年累计净利润 ≥ 2 亿，最近一年 ≥ 1 亿；且三年经营现金流累计 ≥ 2 亿，或营收累计 ≥ 15 亿</td><td>最高</td></tr>
+<tr><td><strong>创业板</strong></td><td>两年累计净利润 ≥ 1 亿，且最近一年 ≥ 6,000 万；或市值 ≥ 15 亿 + 最近一年净利润为正 + 营收 ≥ 4 亿；或市值 ≥ 50 亿 + 营收 ≥ 3 亿</td><td>中</td></tr>
+<tr><td><strong>科创板</strong></td><td>财务指标未上调；科创属性：三年研发投入累计 ≥ 8,000 万、发明专利 ≥ 7 项、三年营收复合增长率 ≥ 25%</td><td>看适配路径</td></tr>
+<tr><td><strong>北交所</strong></td><td>两年净利润均 ≥ 1,500 万且加权 ROE 平均 ≥ 8%；或最近一年净利润 ≥ 2,500 万且 ROE ≥ 8%</td><td>最低门槛，费用空间也最小</td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>判断逻辑：门槛越低，越不能承受股份支付。</strong></p>
+<p>北交所最近一年净利 2,500 万，年费用 500 万就是 20%。同样 500 万费用放在主板（净利 1 亿）只占 5%。</p>
+<p>所以先定板块，再定盘子。顺序反了会返工。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-3">2.3 总量与个量：分多少、分给谁</h2>
+
+<h3>总量：一次算准，不留尾巴</h3>
+<table>
+<thead><tr><th>授予时点</th><th class="num">建议总量</th><th>理由</th></tr></thead>
+<tbody>
+<tr><td>报告期第 1 年</td><td class="num">8%–10%</td><td>摊销覆盖 3 年，费用压力最大</td></tr>
+<tr><td>报告期第 2 年</td><td class="num">10%–12%</td><td>摊销覆盖 2 年</td></tr>
+<tr><td>报告期末</td><td class="num">12%–15%</td><td>费用基本落在申报之后</td></tr>
+<tr><td>北交所</td><td class="num">10%–15%</td><td>门槛低，但利润空间也小</td></tr>
+</tbody>
+</table>
+<p>上限怎么定：用 2.1 节算出的「可承受年摊销额」反推。年摊销 ÷ 每股差价 ÷ 总股本 = 激励比例上限。</p>
+
+<div class="callout">
+<p><strong>不能留「明年再发」的预留。</strong></p>
+<p>非上市方案里常见的「首期 60%、第二年 25%、预留 15%」，在这里行不通——申报前必须把该发的发完，未实施完毕的期权要加速或终止。</p>
+<p>所以总量要一次算准，把未来两年计划招的人也含进去。算少了，后面想补就得重新稀释全体股东。</p>
+</div>
+
+<h3>三层分配</h3>
+<table>
+<thead><tr><th>层</th><th>对象</th><th class="num">占总量</th><th>工具</th></tr></thead>
+<tbody>
+<tr><td>核心层</td><td>总经理、副总、核心技术/销售负责人，3–8 人</td><td class="num">50%–60%</td><td>实股（平台）</td></tr>
+<tr><td>中层</td><td>部门经理、关键岗位，10–25 人</td><td class="num">30%–40%</td><td>实股（平台）</td></tr>
+<tr><td>骨干层</td><td>高潜人员、关键工序，5–15 人</td><td class="num">10%–15%</td><td>实股或期权</td></tr>
+</tbody>
+</table>
+<p>先分层、再落到人。反过来做——先列名单再分——一定会出现「这个人凭什么和我一样多」的僵局。</p>
+
+<h3>个量：用点数法，不用感觉</h3>
+<p>「为什么他比我多」是股权激励最容易激起矛盾的问题。答案必须是公式，不能是老板的偏好。</p>
+<div class="figure">
+个人点数 = 岗位价值 × 40% + 历史贡献 × 30% + 不可替代性 × 30%<br>
+个人额度 = 总量 × (个人点数 ÷ 全体点数)
+</div>
+<table>
+<thead><tr><th>维度</th><th>怎么打分</th><th>数据来源</th></tr></thead>
+<tbody>
+<tr><td>岗位价值</td><td>按岗位评估结果分档，1–5 分</td><td>现有职级体系</td></tr>
+<tr><td>历史贡献</td><td>司龄 + 近 3 年绩效，1–5 分</td><td>人事档案、考核记录</td></tr>
+<tr><td>不可替代性</td><td>掌握关键客户 / 工艺 / 技术 / 供应链，1–5 分</td><td>分管领导评价</td></tr>
+</tbody>
+</table>
+<p>这个模型的价值不在算得准，在于事后可解释。员工来问，你能把三列分数摊开给他看。</p>
+
+<h3>单人上限</h3>
+<table>
+<thead><tr><th>层级</th><th class="num">占总量上限</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>总经理</td><td class="num">25%</td><td>再高会让审核问「是不是一个人在控制公司」</td></tr>
+<tr><td>副总 / 核心</td><td class="num">15%</td><td>—</td></tr>
+<tr><td>部门经理</td><td class="num">5%</td><td>—</td></tr>
+<tr><td>骨干</td><td class="num">1.5%</td><td>—</td></tr>
+</tbody>
+</table>
+<p>设上限还有一层考虑：如果某个人拿得过多，一旦他离职，回购金额会成为现金流事件。</p>
+
+<h3>人数上限：两条不同的线</h3>
+<table>
+<thead><tr><th>路径</th><th class="num">上限</th><th>依据</th></tr></thead>
+<tbody>
+<tr><td>员工直接持股并申请递延纳税</td><td class="num">职工总数 × 30%</td><td>财税〔2016〕101 号</td></tr>
+<tr><td>持股平台（依法实施的员工持股计划）</td><td class="num">穿透后不破 200 人</td><td>《证券法》第九条</td></tr>
+<tr><td>单个有限合伙平台</td><td class="num">49 名员工 + 1 名 GP</td><td>《合伙企业法》第六十一条</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<p><strong>这两条线不是一个口径，不能混用。</strong></p>
+<p>30% 那条只对「直接持股 + 想享受递延纳税」的情况有效。走持股平台本来就不适用递延（原因见 2.8 节），所以 30% 用不上——真正卡住的是 200 人。</p>
+<p>超过 49 人的平台要拆第二个，拆出三层以上，审核会质疑股权结构不清晰。所以规模要提前算。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-4">2.4 工具：实股平台为主，期权为辅</h2>
+
+<h3>主路径：有限合伙持股平台</h3>
+<table>
+<thead><tr><th>要素</th><th>做法</th><th>为什么</th></tr></thead>
+<tbody>
+<tr><td>形式</td><td>有限合伙企业</td><td>设立简便，税负穿透</td></tr>
+<tr><td>GP</td><td>实际控制人或其控股公司</td><td>执行合伙事务，掌握表决权</td></tr>
+<tr><td>LP</td><td>激励对象</td><td>拿经济收益，不参与经营</td></tr>
+<tr><td>股权来源</td><td>增资 或 受让实际控制人老股</td><td>增资不占用现金，老股转让可实现部分退出</td></tr>
+<tr><td>控制权</td><td>平台作为一个股东表决</td><td>员工进不了股东会</td></tr>
+</tbody>
+</table>
+
+<h3>不用平台，直接给员工持股行不行</h3>
+<p>受人数限制。<strong>股份有限公司股东人数上限 200 人</strong>，要穿透计算。</p>
+<div class="callout-ok">
+<p><strong>依法实施的员工持股计划，员工人数不计入 200 人。</strong>这是平台的核心便利。</p>
+<p>前提是：平台里必须全是员工，且计划依法实施。</p>
+</div>
+
+<h3>期权：可以带，但限制很硬</h3>
+<p>依据《证券期货法律适用意见第 17 号》及科创板、创业板审核规则：</p>
+<table>
+<thead><tr><th>条件</th><th>要求</th></tr></thead>
+<tbody>
+<tr><td>总量</td><td>≤ 上市前总股本的 <strong>15%</strong></td></tr>
+<tr><td>预留权益</td><td><strong>不得设置</strong></td></tr>
+<tr><td>行权价</td><td>原则上 ≥ 最近一年经审计净资产或评估值</td></tr>
+<tr><td>在审期间</td><td><strong>不得新增、不得行权</strong></td></tr>
+<tr><td>控制权</td><td>行权后不得导致实际控制人发生变化</td></tr>
+<tr><td>减持</td><td>行权股票自可行权日起 <strong>3 年不减持</strong></td></tr>
+<tr><td>时点</td><td>只能是「申报前制定、上市后实施」，<strong>不能跨申报期</strong></td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>最后一条最容易踩。</strong></p>
+<p>「申报前制定、申报期间还在行权」不符合规定。如果计划跨了申报期，申报前必须加速行权完毕，或终止计划。</p>
+</div>
+
+<p><strong>实务建议</strong>：制造业、传统行业用实股平台就够。期权主要给科技型企业用——想留人，又不想让员工马上掏一大笔钱。</p>
+
+<h3>必须清理的：虚拟股、干股、分红权</h3>
+<div class="callout-bad">
+<p>申报前<strong>必须清理干净</strong>，转成实股或终止。</p>
+<p>理由：这类安排是「股权不清晰」的直接证据，审核会一路问到底。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-5">2.5 定价与公允价值</h2>
+
+<h3>公允价值怎么定</h3>
+<p>依据《监管规则适用指引——发行类第 5 号》，考虑五个因素：</p>
+<ol>
+<li>入股时期、业绩基础与变动预期、市场环境变化</li>
+<li>行业特点、同行业并购重组市盈率、市净率</li>
+<li>实施当年市盈率、市净率</li>
+<li><strong>最近合理的第三方入股价</strong>——最有力，但要避免「难以证明公允性」的价格</li>
+<li>恰当的估值技术</li>
+</ol>
+
+<div class="callout">
+<p><strong>一个常见的坑：不能用成本法下的每股净资产当公允价值。</strong></p>
+<p>尤其在公司明显增长时，监管明确说这类估值可能「已明显高于或低于」公允价值。</p>
+<p>净资产只能作为<em>授予价</em>的参考基准，不能作为<em>公允价</em>。</p>
+</div>
+
+<h3>定价的三种选择</h3>
+<table>
+<thead><tr><th>定价方式</th><th class="num">股份支付</th><th class="num">员工出资压力</th><th>适用</th></tr></thead>
+<tbody>
+<tr><td>按每股净资产</td><td class="num">大</td><td class="num">小</td><td>早期、估值未起来</td></tr>
+<tr><td>公允价 3 折</td><td class="num">中</td><td class="num">中</td><td><strong>主流做法</strong></td></tr>
+<tr><td>接近公允价</td><td class="num">小</td><td class="num">大</td><td>估值已高、员工有钱</td></tr>
+</tbody>
+</table>
+<p>市场惯例是授予价约为公允价的 <strong>30%</strong>。既让员工买得起，又不把费用推到不可承受。</p>
+
+<hr/>
+
+<h2 id="2-6">2.6 授予、成熟与退出</h2>
+
+<h3>成熟安排：4 年，1 年 cliff</h3>
+<table>
+<thead><tr><th>时点</th><th class="num">本期成熟</th><th class="num">累计</th></tr></thead>
+<tbody>
+<tr><td>授予日</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>满 12 个月</td><td class="num">25%</td><td class="num">25%</td></tr>
+<tr><td>满 24 个月</td><td class="num">25%</td><td class="num">50%</td></tr>
+<tr><td>满 36 个月</td><td class="num">25%</td><td class="num">75%</td></tr>
+<tr><td>满 48 个月</td><td class="num">25%</td><td class="num">100%</td></tr>
+</tbody>
+</table>
+<p>4 年不是随便定的。它和股份支付的摊销期是同一个数——2.1 节讲过，等待期决定费用怎么摊。改成 3 年，年费用上升 33%；改成 5 年，摊销会跨进下一个报告期。</p>
+<p>1 年 cliff 的作用是筛人：第一年就走的人白拿股权还要回购，双方都麻烦。</p>
+
+<div class="callout-bad">
+<p><strong>申报期间必须冻结成熟。</strong></p>
+<p>从申报受理到上市，激励计划不能新增授予、不能行权、不能调整。已经在排队的，成熟时间表要倒排到受理日之前，或者约定「上市后一次性成熟」。</p>
+<p>这一条漏了，申报中途要改计划，等于把材料退回来重做。</p>
+</div>
+
+<h3>业绩条件：双挂钩</h3>
+<table>
+<thead><tr><th>层级</th><th>条件</th><th>未达成怎么办</th></tr></thead>
+<tbody>
+<tr><td>公司</td><td>净利润达成预算 90% 以上</td><td>当期成熟部分顺延一年，不取消</td></tr>
+<tr><td>个人</td><td>年度考核 B 及以上</td><td>同上</td></tr>
+</tbody>
+</table>
+<p>顺延而不是取消，是因为取消太狠会让人躺平——反正达不到，努力也没用。顺延保留压力，也不至于把人推走。</p>
+
+<h3>加速成熟</h3>
+<table>
+<thead><tr><th>触发事件</th><th>处理</th></tr></thead>
+<tbody>
+<tr><td>IPO 成功</td><td>剩余未成熟部分一次性成熟，但受锁定期约束</td></tr>
+<tr><td>被并购 / 控制权变更</td><td>按协议约定的加速比例，常见 50%–100%</td></tr>
+<tr><td>死亡 / 丧失劳动能力</td><td>已授予部分全部成熟，由继承人持有或公司回购</td></tr>
+</tbody>
+</table>
+<p>加速条款要写进协议，不能只写在方案里——方案是内部文件，协议才是能拿去打官司的东西。</p>
+
+<h3>退出：价格公式必须写死</h3>
+<p>绝大多数股权激励纠纷出在退出，根因只有一个：协议里写了「届时协商」。</p>
+<table>
+<thead><tr><th>离职情形</th><th>已成熟</th><th>未成熟</th><th>回购价</th></tr></thead>
+<tbody>
+<tr><td>合同到期不续签</td><td>公司有权回购</td><td>无偿收回</td><td>净资产价</td></tr>
+<tr><td>协商解除</td><td>公司有权回购</td><td>无偿收回</td><td>净资产价</td></tr>
+<tr><td>主动辞职</td><td>公司有权回购</td><td>无偿收回</td><td>原值 + 年化 5%，孰低取净资产</td></tr>
+<tr><td>过错辞退</td><td>强制回购</td><td>无偿收回</td><td>原值，无息</td></tr>
+<tr><td>退休</td><td>可继续持有</td><td>按约定</td><td>—</td></tr>
+<tr><td>死亡 / 丧失劳动能力</td><td>继承人继承</td><td>无偿收回</td><td>净资产价</td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>「过错」不定义，这条约定就是废的。</strong></p>
+<p>必须在协议里逐项列明：营私舞弊、收受回扣、泄露商业秘密、违反竞业限制、被追究刑事责任。法院认具体列举，不认「严重违纪」四个字。</p>
+</div>
+
+<h3>四个技术细节</h3>
+<table>
+<thead><tr><th>#</th><th>事项</th><th>怎么写</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>回购触发时限</td><td>离职之日起 90 日内公司行使回购权，逾期视为放弃</td></tr>
+<tr><td>2</td><td>分期支付</td><td>回购款分 3 年支付，每年不低于 1/3</td></tr>
+<tr><td>3</td><td>资金来源</td><td>从未分配利润或资本公积列支，或由 GP 受让</td></tr>
+<tr><td>4</td><td>争议解决</td><td>约定仲裁，一裁终局</td></tr>
+</tbody>
+</table>
+<p>第 1 条最容易被漏掉。没有时限，公司永远悬着一笔潜在回购义务，报表附注里也不好交代。</p>
+
+<h3>拟上市特有的三个退出问题</h3>
+<table>
+<thead><tr><th>问题</th><th>为什么特殊</th><th>怎么处理</th></tr></thead>
+<tbody>
+<tr><td>申报前离职</td><td>审核关注股权是否清晰、有无纠纷</td><td>申报前回购完毕并完成工商变更</td></tr>
+<tr><td>回购价低于公允价</td><td>可能被质疑利益输送</td><td>按协议公式执行，保留评估依据</td></tr>
+<tr><td>与投资人回购条款冲突</td><td>员工回购与对赌回购谁优先</td><td>两套条款分开写，明确不交叉、不互抵</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h2 id="2-7">2.7 会计处理：等待期是关键</h2>
+
+<h3>有没有服务期，决定费用进哪个口袋</h3>
+<table>
+<thead><tr><th>情形</th><th>会计处理</th><th>计入</th><th>对审核的影响</th></tr></thead>
+<tbody>
+<tr><td>无等待期，立即授予</td><td>一次性计入当期</td><td><strong>非经常性损益</strong></td><td>扣非后被剔除，对上市门槛影响小</td></tr>
+<tr><td>约定服务期</td><td>按服务期分摊</td><td><strong>经常性损益</strong></td><td>扣非后仍然扣减，年年削指标</td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>这两条路对上市指标的影响，方向和直觉相反。</strong></p>
+<p>上市标准看的是「扣非前后孰低」的净利润。非经常性损益会被<strong>剔除</strong>，所以一次性计入的那笔钱，扣非后就不见了——<strong>对上市门槛的影响接近于零</strong>，只压低当期净利润的绝对值。</p>
+<p>分摊的部分计入经常性损益，<strong>扣非后照样扣减</strong>，年年都在削指标。</p>
+<p>所以单从指标看，不设等待期反而更「安全」。代价是：一次性大额费用要经得起「偶发、与经营无直接关系」的追问，规模太大同样会被质疑；而且净利润绝对值下降，会影响每股收益、市值这另一组指标。</p>
+<p><strong>结论</strong>：成熟期是为了留住人，不是为了报表好看。2.1 节算的那笔账，是「有等待期」的情形——费用进经常性损益，确实影响上市指标。要不要为了指标放弃成熟期，是老板该做的取舍，但它不是没有代价的。</p>
+</div>
+
+<h3>分录</h3>
+<pre><code>等待期内，每期期末：
+  借：管理费用 / 研发费用 / 制造费用
+      贷：资本公积——其他资本公积
+
+行权或解锁时：
+  借：资本公积——其他资本公积
+      贷：资本公积——资本溢价</code></pre>
+
+<h3>企业所得税的税会差异</h3>
+<p>等待期内会计确认的费用，<strong>税法不认</strong>，要纳税调增；实际行权时按「行权价与公允价的差额」作为工资薪金支出，在行权年度税前扣除。</p>
+<div class="figure">
+等待期：会计费用 1,050 万 → 纳税调增 1,050 万 → 形成递延所得税资产<br>
+行权年：税务扣除全额 → 纳税调减
+</div>
+<p>依据国家税务总局公告 2012 年第 18 号。非上市公司参照执行，<strong>各地口径可能不同，落地前与主管税务机关确认一次</strong>。</p>
+
+<hr/>
+
+<h2 id="2-8">2.8 税务：平台持股的代价</h2>
+
+<div class="callout-bad">
+<p><strong>这一节要纠正一个常见误解。</strong></p>
+<p>财税〔2016〕101 号规定：非上市公司股权激励可申请递延纳税，转让时按「财产转让所得」20% 计税。</p>
+<p>但该政策要求<strong>激励标的应为境内居民企业的本公司股权</strong>。</p>
+<p>通过有限合伙平台持股，员工持有的是<strong>合伙份额</strong>，不是公司股权，<strong>不符合递延纳税条件</strong>。</p>
+<p>这是主流征管口径，不是推测：财税〔2016〕101 号要求激励标的为「本公司股权」，平台份额不属于。有企业搭了合伙平台又去申请递延，被直接否定。</p>
+<p>但各地执行尺度不完全一致，这也是下一节建议「与主管税务机关书面沟通」的原因。</p>
+</div>
+
+<h3>两条路的真实对比</h3>
+<table>
+<thead><tr><th>对比项</th><th>员工直接持股</th><th>平台持股</th></tr></thead>
+<tbody>
+<tr><td>递延纳税</td><td>✅ 可申请</td><td>❌ 不适用</td></tr>
+<tr><td>股东人数</td><td>占用名额，上限 200</td><td>不占（依法实施的员工持股计划）</td></tr>
+<tr><td>控制权</td><td>分散，可能僵局</td><td>GP 独揽</td></tr>
+<tr><td>人员变动</td><td>每次工商变更</td><td>平台内部转让，不动工商</td></tr>
+<tr><td>取得环节</td><td>可递延至转让</td><td>差额可能被认定为工资薪金</td></tr>
+<tr><td>转让环节</td><td>财产转让所得 20%</td><td>合伙份额转让，穿透后 20%</td></tr>
+</tbody>
+</table>
+
+<h3>拟上市企业的现实选择</h3>
+<div class="callout-ok">
+<p><strong>几乎都选平台。</strong></p>
+<p>因为控制权和人数便利的价值，远大于税负成本。而且上市后减持，按财产转让 20%，仍低于工资薪金的最高 45%。</p>
+</div>
+
+<div class="callout">
+<p><strong>但必须提前做一件事：</strong></p>
+<p>就平台份额授予的个税处理口径，<strong>与主管税务机关书面沟通确认</strong>，并把回执归档。</p>
+<p>各地执行尺度不同，这是最容易埋雷的地方。没有书面依据，申报时解释不清，也可能在员工离职回购时被动补税。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-9">2.9 出资来源与财务资助禁令</h2>
+
+<div class="callout-bad">
+<p><strong>新《公司法》第一百六十三条：</strong>公司不得为他人取得本公司或者其母公司的股份提供赠与、借款、担保以及其他财务资助。</p>
+<p><strong>员工没钱买股，公司不能借。</strong>这是很多方案卡住的地方。</p>
+</div>
+
+<p>该条同时规定了例外：公司实施员工持股计划的除外；为公司利益，经股东会决议或董事会依授权决议，可以提供财务资助，但<strong>累计总额不得超过已发行股本总额的 10%</strong>。</p>
+
+<h3>替代方案</h3>
+<table>
+<thead><tr><th>方案</th><th>可行性</th><th>审核关注点</th></tr></thead>
+<tbody>
+<tr><td>员工自筹</td><td>最干净</td><td>资金来源合法性</td></tr>
+<tr><td>大股东借款</td><td>可以</td><td>资金来源、还款安排、无代持约定</td></tr>
+<tr><td>分期付款</td><td>可以</td><td>权属是否清晰、是否附条件</td></tr>
+<tr><td>银行并购贷款</td><td>有案例</td><td>还款能力、是否构成重大不确定</td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>实际控制人借款给员工，是审核重点问询项。</strong></p>
+<p>要提前准备：资金来源证明（银行流水、完税凭证）、借款协议、还款计划、员工还款能力说明、无代持声明。</p>
+<p>缺一项，都会被追问一轮。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-10">2.10 申报前必须清理的八项</h2>
+<table>
+<thead><tr><th class="num">#</th><th>事项</th><th>处理方式</th><th>风险等级</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>外部人员（2020.3.1 之后设立的平台）</td><td>原则上必须清理；确有贡献的，准备证据链</td><td><span class="tag tag-red">高</span></td></tr>
+<tr><td class="num">2</td><td>代持</td><td>必须解除，还原真实权属</td><td><span class="tag tag-red">高</span></td></tr>
+<tr><td class="num">3</td><td>三类股东（契约型基金、资管计划、信托）</td><td>必须清理</td><td><span class="tag tag-red">高</span></td></tr>
+<tr><td class="num">4</td><td>对赌、回购条款</td><td>终止，或确认不影响股权清晰</td><td><span class="tag tag-amber">中</span></td></tr>
+<tr><td class="num">5</td><td>未实施完毕的期权</td><td>加速行权或终止</td><td><span class="tag tag-amber">中</span></td></tr>
+<tr><td class="num">6</td><td>虚拟股、干股、分红权</td><td>转实股或终止</td><td><span class="tag tag-red">高</span></td></tr>
+<tr><td class="num">7</td><td>出资不实、未实缴</td><td>补足；注意新《公司法》5 年实缴</td><td><span class="tag tag-amber">中</span></td></tr>
+<tr><td class="num">8</td><td>离职人员份额未处理</td><td>按协议回购，全过程留痕</td><td><span class="tag tag-amber">中</span></td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>第 1 项最严。</strong></p>
+<p>新《证券法》2020 年 3 月 1 日施行后设立的员工持股平台，<strong>原则上应全部由公司员工组成</strong>。</p>
+<p>之前设立的、含少量外部人员的，可不清理，但外部人员要<strong>穿透计算人数</strong>。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-11">2.11 时间表（倒排）</h2>
+
+<h3>情形一：报告期已开始（示例：2027 年 3 月申报创业板，报告期 2024–2026）</h3>
+<table>
+<thead><tr><th>时点</th><th>事项</th><th>主导</th></tr></thead>
+<tbody>
+<tr><td>2026.11</td><td>确定板块、测算股份支付、锁定总量</td><td>财务</td></tr>
+<tr><td>2026.12</td><td>方案设计、与保荐机构预沟通</td><td>财务 + 中介</td></tr>
+<tr><td>2027.1</td><td>股东会决议、搭建平台、员工出资</td><td>法务</td></tr>
+<tr><td>2027.2</td><td>工商变更、税务沟通、测算定稿</td><td>财务</td></tr>
+<tr><td>2027.3</td><td>申报</td><td>—</td></tr>
+<tr><td>申报后</td><td><strong>不得新增激励、不得行权</strong></td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>情形二：报告期尚未开始</h3>
+<div class="callout-ok">
+<p><strong>最优窗口是报告期开始前 1–2 年做完。</strong></p>
+<p>让摊销期在报告期开始前结束，报告期费用为零，且不构成突击入股。</p>
+<p>如果 2028 年申报（报告期 2025–2027），那么 2024 年做完最理想。</p>
+</div>
+
+<hr/>
+
+<h2 id="2-12">2.12 财务经理动作清单</h2>
+<table>
+<thead><tr><th class="num">#</th><th>动作</th><th>产出</th><th>时点</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>算出三种授予时点的报告期费用</td><td>一张对比表给老板看</td><td>方案设计前</td></tr>
+<tr><td class="num">2</td><td>算最大可承受费用 = 最近一年净利润 × 20%</td><td>反推激励总量上限</td><td>方案设计前</td></tr>
+<tr><td class="num">3</td><td>与保荐机构预沟通方案</td><td>避免方案做完被否</td><td>方案定稿前</td></tr>
+<tr><td class="num">4</td><td>与主管税务机关沟通平台份额个税口径</td><td>书面留痕</td><td>出资前</td></tr>
+<tr><td class="num">5</td><td>建立激励台账</td><td>人员、份额、授予日、成熟、离职</td><td>授予起持续</td></tr>
+<tr><td class="num">6</td><td>准备资金来源证据</td><td>流水、借款协议、还款计划、无代持声明</td><td>出资时</td></tr>
+<tr><td class="num">7</td><td>每年末复核股份支付测算与摊销</td><td>审计对接材料</td><td>每年 12 月</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h2 id="part3">第三部分　上市之后的员工股权激励</h2>
+
+<p>公司挂牌之后，这件事的性质变了：从「股东会自己定」变成「在监管划定的边界内执行」。空间小了，但规则清楚了。</p>
+<p>这一部分按实操顺序排：先看工具和硬指标，再看谁能参加、什么时候能授，然后是税和会计，最后和上市前做一张对照。</p>
+<h2 id="3-1">3.1 性质变了：从股东会自定到法定动作</h2>
+
+<p>第二部分解决的是「上市前怎么给」。公司挂牌之后，这件事的性质变了：从股东会自己定，变成受证监会规章和交易所规则约束的法定动作。</p>
+<p>同一件事，换了一套规则。</p>
+
+<h3>三个根本变化</h3>
+<table>
+<thead><tr><th>维度</th><th>上市前</th><th>上市后</th></tr></thead>
+<tbody>
+<tr><td>依据</td><td>股东会决议 + 《公司法》</td><td>《上市公司股权激励管理办法》+ 交易所规则</td></tr>
+<tr><td>自由度</td><td>价格、数量、节奏都能谈</td><td>总量、单价、成熟期都有法定上下限</td></tr>
+<tr><td>披露</td><td>不需要</td><td>董事会决议、股东会、授予公告、定期报告，全程披露</td></tr>
+</tbody>
+</table>
+
+<h2 id="3-2">3.2 工具只剩三种</h2>
+<table>
+<thead><tr><th>工具</th><th>机制</th><th>出资时点</th><th>适用板块</th></tr></thead>
+<tbody>
+<tr><td>第一类限制性股票</td><td>授予时登记，先拿股，后解锁</td><td>授予时</td><td>全部</td></tr>
+<tr><td>第二类限制性股票</td><td>满足归属条件才登记，俗称「打折期权」</td><td>归属时</td><td>科创板、创业板</td></tr>
+<tr><td>股票期权</td><td>满足条件后按约定价买入</td><td>行权时</td><td>全部</td></tr>
+</tbody>
+</table>
+<p>上市前用过的干股、虚拟股、分红权，在这里都不能用了。</p>
+
+<div class="callout">
+<p><strong>第二类限制性股票为什么成了主流</strong></p>
+<p>它把限制性股票的低价和期权的延后出资合在一起：授予时不登记、不出钱，满足条件才掏钱。对员工来说出资压力最小——这是它取代第一类限制性股票和期权的直接原因。</p>
+<p>所以它成了科创板、创业板激励计划的主流工具——这两个板块新披露的计划里，含第二类限制性股票的占绝大多数。</p>
+</div>
+
+<h2 id="3-3">3.3 五个法定指标</h2>
+<table>
+<thead><tr><th>指标</th><th>上限</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>总量</td><td>主板 10%；科创板、创业板 20%；北交所 30%</td><td>全部在有效期内的计划累计计算</td></tr>
+<tr><td>单人</td><td>总股本 1%</td><td>超过需股东会特别决议，实践中仍会被问询</td></tr>
+<tr><td>有效期</td><td>10 年</td><td>自首次授予日起算</td></tr>
+<tr><td>限制性股票授予价</td><td>不低于市价的 50%</td><td>两个候选取<strong>较高者</strong>：草案公布前 1 日均价的 50%，与前 20/60/120 日均价之一（选哪个由公司定）的 50%</td></tr>
+<tr><td>股票期权行权价</td><td>不低于市价</td><td>没有折扣空间；同样是前 1 日均价与前 20/60/120 日均价之一<strong>孰高</strong></td></tr>
+</tbody>
+</table>
+
+<div class="callout-bad">
+<p><strong>期权不能打折，限制性股票可以，两者差一倍。</strong></p>
+<p>这是上市后最容易搞错的一条：限制性股票可以按市价五折授予，期权必须按市价或更高。</p>
+<p>所以「想低价给」选限制性股票，「想延后出资」选期权或第二类限制性股票——两个诉求不能同时满足，得挑一个。</p>
+</div>
+
+<h2 id="3-4">3.4 成熟期：法定节奏</h2>
+<table>
+<thead><tr><th>要求</th><th>规定</th></tr></thead>
+<tbody>
+<tr><td>首次解锁间隔</td><td>授予日到首次解除限售日，不少于 12 个月</td></tr>
+<tr><td>分期节奏</td><td>每期不少于 12 个月</td></tr>
+<tr><td>单期比例</td><td>各期不超过获授总量的 50%</td></tr>
+<tr><td>未达标</td><td>当期不得解锁，且不得递延至下期</td></tr>
+</tbody>
+</table>
+<p>最后一条和 2.6 节的「顺延」相反：上市前未达标的额度可以顺延一年，上市后当期作废、不能延。这是法定要求，协议里写「顺延」也不生效。</p>
+
+<h2 id="3-5">3.5 谁能参加，谁不能</h2>
+<table>
+<thead><tr><th>对象</th><th>能否参与</th></tr></thead>
+<tbody>
+<tr><td>董事、高级管理人员</td><td>可以</td></tr>
+<tr><td>核心技术人员、核心业务人员</td><td>可以</td></tr>
+<tr><td>其他对经营业绩和未来发展有直接影响的员工</td><td>可以</td></tr>
+<tr><td>在境内工作的外籍员工（任职董监高或核心人员）</td><td>可以</td></tr>
+<tr><td><strong>独立董事</strong></td><td><strong>不可以</strong></td></tr>
+<tr><td><strong>监事</strong></td><td><strong>不可以</strong></td></tr>
+<tr><td>单独或合计持股 5% 以上股东 / 实际控制人及其配偶、父母、子女</td><td><strong>一律不可以</strong>（《管理办法》第八条，各板块相同）</td></tr>
+</tbody>
+</table>
+
+<h2 id="3-6">3.6 窗口期：这些时间不能动</h2>
+<table>
+<thead><tr><th>期间</th><th>限制</th></tr></thead>
+<tbody>
+<tr><td>定期报告公告前 30 日</td><td>不得授予、不得行权</td></tr>
+<tr><td>业绩预告、业绩快报公告前 10 日</td><td>同上</td></tr>
+<tr><td>重大事项决定过程中至公告后 2 个交易日</td><td>同上</td></tr>
+</tbody>
+</table>
+<p>这条对财务经理最实际：授予日要和年报、半年报的披露时间排开。排在窗口期里，整个计划要往后推一个月——而且股东会通过后 60 日内必须完成授予登记，两边挤在一起就来不及。</p>
+
+<h2 id="3-7">3.7 税：从递延 20% 到单独计税 3%–45%</h2>
+<p>上市前如果员工<strong>直接持股</strong>，可以申请递延纳税、转让时按财产转让 20%；走<strong>持股平台</strong>的则不适用递延（原因见 2.8 节）。上市之后，无论哪种持股方式，统一换成另一套。</p>
+<table>
+<thead><tr><th>环节</th><th>怎么算</th><th>依据</th></tr></thead>
+<tbody>
+<tr><td>行权 / 解锁 / 归属</td><td>不并入综合所得，<strong>全额单独</strong>适用综合所得税率表（3%–45%）</td><td>财政部 税务总局公告 2023 年第 25 号</td></tr>
+<tr><td>卖出股票</td><td>转让上市公司股票的差价，暂免征收个人所得税</td><td>现行政策</td></tr>
+</tbody>
+</table>
+<p>「单独计税」是关键：这笔收入不和当年工资合并，不会把其他收入的税率档一起推高。</p>
+
+<div class="figure">
+应纳税额 = 股权激励收入 × 适用税率 − 速算扣除数<br>
+股权激励收入 = (市价 − 授予价) × 股数
+</div>
+
+<h3>算一笔：10 万股，差 10 元</h3>
+<table>
+<thead><tr><th>项目</th><th class="num">数值</th></tr></thead>
+<tbody>
+<tr><td>授予价</td><td class="num">10 元</td></tr>
+<tr><td>归属日市价</td><td class="num">20 元</td></tr>
+<tr><td>股数</td><td class="num">10 万股</td></tr>
+<tr><td>股权激励收入</td><td class="num">100 万</td></tr>
+<tr><td>单独计税（45% 档，速算扣除 18.192 万）</td><td class="num">26.81 万</td></tr>
+<tr><td>实际税负</td><td class="num">26.8%</td></tr>
+<tr><td>若并入综合所得（假设原已适用 45%）</td><td class="num">45 万</td></tr>
+</tbody>
+</table>
+<p>单独计税省下的 18 万，就是这项优惠的全部意义。它执行到 <strong>2027 年 12 月 31 日</strong>，之后是否延续没有定论——做三年以上的激励方案，要把这个不确定性写进去。</p>
+
+<h2 id="3-8">3.8 会计：公允价值不用争了</h2>
+<p>上市前最难的「每股公允价怎么定」，上市后不成问题：市价就是答案。</p>
+<table>
+<thead><tr><th>工具</th><th>公允价值</th></tr></thead>
+<tbody>
+<tr><td>限制性股票</td><td>授予日收盘价 − 授予价（第一类还需考虑限售折扣）</td></tr>
+<tr><td>股票期权</td><td>期权定价模型（Black-Scholes 或二叉树）</td></tr>
+</tbody>
+</table>
+<p>摊销、分录、税会差异和 2.7 节讲的一样，不再重复。唯一的变化：这里的费用不再影响上市指标，只影响当期利润和每股收益。</p>
+
+<h2 id="3-9">3.9 上市前 vs 上市后：一张表看完</h2>
+<table>
+<thead><tr><th>维度</th><th>上市前</th><th>上市后</th></tr></thead>
+<tbody>
+<tr><td>总量上限</td><td>无明文，股东会决定</td><td>10% / 20% / 30%，按板块</td></tr>
+<tr><td>单人上限</td><td>无明文</td><td>1%，特别决议可突破</td></tr>
+<tr><td>价格下限</td><td>无强制下限；但授予价低于公允价的差额，按工资薪金计税</td><td>限制性股票五折，期权不打折</td></tr>
+<tr><td>成熟期</td><td>自由约定，4 年 1 cliff 常见</td><td>法定：首期间隔 ≥12 个月，每期 ≥12 个月，单期 ≤50%</td></tr>
+<tr><td>未达标处理</td><td>可顺延</td><td>当期作废，不得递延</td></tr>
+<tr><td>工具</td><td>实股、虚拟股、期权都能用</td><td>只有三类法定工具</td></tr>
+<tr><td>税</td><td>直接持股可递延、转让按 20%；平台持股不适用递延</td><td>单独计税 3%–45%，卖股免个税</td></tr>
+<tr><td>披露</td><td>无</td><td>全流程披露</td></tr>
+<tr><td>对利润的影响</td><td>决定能不能上市</td><td>只影响每股收益和分红</td></tr>
+</tbody>
+</table>
+
+<h2 id="3-10">3.10 财务经理的四个动作</h2>
+<table>
+<thead><tr><th>#</th><th>动作</th><th>时点</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>把授予日排开定期报告窗口期</td><td>每次授予前</td></tr>
+<tr><td>2</td><td>测算股份支付费用对每股收益的影响</td><td>董事会审议前</td></tr>
+<tr><td>3</td><td>在定期报告里披露激励实施情况（九项）</td><td>每期报告</td></tr>
+<tr><td>4</td><td>跟踪 2027 年底税收优惠到期后的政策变化</td><td>持续</td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>一句话区分前后两套规则</strong></p>
+<p>上市前，你在设计一个「不违反公司法、不拖累利润指标」的方案，空间大、责任也重。</p>
+<p>上市后，你在执行一套「监管已经写好边界」的流程，空间小、披露重。</p>
+<p>所以上市前的方案要一次做对——上市之后再想调，成本高得多。</p>
+</div>
+
+<hr/>
+
+<h2 id="附一-测算表">附一 测算表使用说明</h2>
+<p>配套三张表，与本文件同目录。按公司所处阶段各用一张，不要混用。</p>
+
+<h3>三张表各管一段</h3>
+<table>
+<thead><tr><th>文件</th><th>对应本文哪一部分</th><th>工作表</th></tr></thead>
+<tbody>
+<tr><td>01 融资稀释测算表</td><td>第一部分 · 每轮融资稀释</td><td>融资稀释</td></tr>
+<tr><td>02 ipo前股权激励测算表</td><td>第二部分 · IPO 前激励</td><td>1-参数输入、2-股份支付测算、3-时点对比、4-额度分配、5-指标校验</td></tr>
+<tr><td>03 上市后股权激励测算表</td><td>第三部分 · 挂牌后激励</td><td>1-参数输入、2-费用与摊销、3-合规校验、4-EPS影响</td></tr>
+</tbody>
+</table>
+
+<h3>01 怎么用</h3>
+<p>只改五个黄底格：A 轮前预留池子、A／B／C 三轮出让比例、IPO 前目标保留池子。自动出四个结果：每轮稀释前后的池子、累计稀释系数、够不够用的判断、以及反向推算「想留多少、A 轮前要预留多少」。</p>
+
+<h3>02 怎么用</h3>
+<table>
+<thead><tr><th>工作表</th><th>作用</th><th>要改哪</th></tr></thead>
+<tbody>
+<tr><td>1-参数输入</td><td>所有假设集中在这</td><td>只改黄底单元格</td></tr>
+<tr><td>2-股份支付测算</td><td>总额与年度摊销</td><td>自动</td></tr>
+<tr><td>3-时点对比</td><td>四种授予时点的报告期费用</td><td>自动</td></tr>
+<tr><td>4-额度分配</td><td>点数法算每个人分多少</td><td>填岗位分、司龄、绩效</td></tr>
+<tr><td>5-指标校验</td><td>对照板块标准看是否打穿</td><td>选板块</td></tr>
+</tbody>
+</table>
+<p>顺序：填参数 → 看「3-时点对比」选授予时点 → 看「5-指标校验」是否满足板块标准 → 打穿就回「1-参数输入」调低比例或调高授予价 → 确定后用「4-额度分配」分到人。</p>
+
+<h3>03 怎么用</h3>
+<table>
+<thead><tr><th>工作表</th><th>作用</th><th>要改哪</th></tr></thead>
+<tbody>
+<tr><td>1-参数输入</td><td>工具、板块、股价、授予价、归属安排、期权定价参数</td><td>只改黄底单元格</td></tr>
+<tr><td>2-费用与摊销</td><td>每股公允价值 → 股份支付总额 → 按归属期摊到年度</td><td>自动</td></tr>
+<tr><td>3-合规校验</td><td>七项法定指标逐条比对（总量、单人、价格下限、两个间隔、单期比例、有效期）</td><td>自动</td></tr>
+<tr><td>4-EPS影响</td><td>每股收益稀释幅度、分红影响、逐年趋势</td><td>自动</td></tr>
+</tbody>
+</table>
+<p>工具选「股票期权」时，表里会用 Black-Scholes 算公允价值（Excel 原生公式，不依赖宏），需要填波动率、无风险利率、股息率、期限四个参数。选限制性股票时走价差法，这四个参数不参与计算。</p>
+
+<div class="callout">
+<p><strong>为什么上市前后的表不能合并成一张</strong>：期权是最大的坑。假设股价 20 元、行权价也是 20 元（法定必须平价），价差为 0，按差额法算出来费用是 <strong>0</strong>；但期权有时间价值，用 Black-Scholes 算是 <strong>5.54 元/股</strong>。300 万股就是 <strong>1,662 万元</strong>的差距。</p>
+<p>02 用的是差额法，只适用于实股和限制性股票；上市后如果做期权，必须用 03。</p>
+</div>
+
+<div class="callout">
+<p><strong>填写注意</strong>：金额单位统一为<strong>万元</strong>，股数单位为<strong>万股</strong>。混用会导致结果错一个数量级。</p>
+<p>表内公式已跨表引用，改动参数后所有结果自动重算。三张表之间不互相引用，各算各的。</p>
+</div>
+
+<hr/>
+
+<h2 id="附二-规则依据">附二 规则依据</h2>
+<table>
+<thead><tr><th>规则</th><th>管什么</th></tr></thead>
+<tbody>
+<tr><td>《证券期货法律适用意见第 17 号》</td><td>首发申报前员工持股计划、期权激励计划的核查要求</td></tr>
+<tr><td>《监管规则适用指引——发行类第 5 号》</td><td>股份支付的公允价值确定、等待期与损益归类</td></tr>
+<tr><td>财税〔2016〕101 号</td><td>非上市公司股权激励递延纳税（适用条件、7 项要求）</td></tr>
+<tr><td>国家税务总局公告 2016 年第 62 号</td><td>递延纳税备案表与年度报告表的报送</td></tr>
+<tr><td>国家税务总局公告 2012 年第 18 号</td><td>股权激励的企业所得税处理与税会差异</td></tr>
+<tr><td>新《公司法》第四十七条</td><td>认缴出资 5 年内缴足</td></tr>
+<tr><td>新《公司法》第一百六十三条</td><td>禁止财务资助，员工持股计划例外与 10% 上限</td></tr>
+<tr><td>《证券法》第九条</td><td>股份有限公司股东 200 人上限</td></tr>
+<tr><td>沪深北交易所《股票上市规则》</td><td>各板块财务指标（2024 年 4 月修订）</td></tr>
+<tr><td>《上市公司股权激励管理办法》</td><td>上市后激励的总量、单人、价格、归属、工具、披露（2016 年发布，2018 年、2025 年两次修正）</td></tr>
+<tr><td>财政部 税务总局公告 2023 年第 25 号</td><td>上市公司股权激励单独计税，执行至 2027 年 12 月 31 日</td></tr>
+<tr><td>《企业会计准则第 11 号——股份支付》</td><td>权益结算的计量、等待期分摊、可行权数量估计</td></tr>
+</tbody>
+</table>
+
+</main>
+</div>
+</body>
+</html>
